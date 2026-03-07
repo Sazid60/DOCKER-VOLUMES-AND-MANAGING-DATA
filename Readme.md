@@ -113,4 +113,50 @@ docker build -t ts-docker:v1 .
 
 docker run -p 5000:5000 --rm --name ts-docker-container ts-docker:v1
 ```
-- this will remove the container and will not be able to see the logs as well because the if we delete the container the logs will be deleted too because the file system is deleted. this is a problem right? we will lose all the logs if we update the code and create a new container. to solve this problem we will use bind mount or named volume. we will use named volume for logs and bind mount for code.
+- this will remove the container and will not be able to see the logs as well because the if we delete the container the logs will be deleted too because the file system is deleted. 
+
+- this is a problem right? we will lose all the logs if we update the code and create a new container. to solve this problem we will use bind mount or named volume. we will use named volume for logs and bind mount for code.
+
+## 3-4 Introduction To Docker Volumes
+
+- Problems of logs deletion after container deletion is solved by docker `Volumes`.
+
+
+![alt text](image-1.png)
+
+- volumes are stored in a part of the host filesystem which is managed by docker. and we can use the volume in multiple containers as well. and we can also backup and restore the volumes. and we can also share the volumes between different containers. and we can also use the volumes in swarm mode as well.
+
+### what we want to do ? the logs file never be deleted even after the container is deleted. the thing is a specific folder we want to store from the container. 
+- here is the twist . 
+
+```dockerfile
+COPY . .
+```
+- this is connected to the image build. and the volume work is connected with container. 
+- we were used to take files from the host machine and store in container now we can also do something like copy from the container and keep in host machine. 
+- we basically use docker VLOLUME 
+
+```dockerfile
+VOLUME ["/app/logs"]
+# we are telling that bro hook the folder name of the container with the host machine(docker will handle it)
+```
+
+
+```dockerfile
+FROM node:20
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+VOLUME ["/app/logs"]
+# we are telling that bro hook the folder name of the container with the host machine
+
+EXPOSE 5000
+
+CMD ["npm", "run", "dev"]
+```
