@@ -100,3 +100,9 @@ https://github.com/Apollo-Level2-Web-Dev/docker-with-typescript-backend/tree/mod
 - permanent data is stored in named volumes or bind mounts, while temporary data can be stored in anonymous volumes or tmpfs mounts. suppose we want to change code and directly add in container. the image is not gonna get the code. If we delete the container the changes will be deleted right? but we want the file is gonna be there even if we delete the container. so we use bind mount or named volume for that.
 
 ![alt text](image.png)
+
+
+## 3-2 Analyzing A Real App
+
+- logger is a kind of thing that we can observe the application logs even after deployed in live. in the project we have used a package called winston for logging. and the system is made like that if any error occurs it will create a file based on the html file and save it permanently. we will see the error lits and debug in development phase
+

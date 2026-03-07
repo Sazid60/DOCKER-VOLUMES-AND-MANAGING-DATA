@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\WORK\\renew-level-2\\PH-MODULES\\REWARD\\BE-A-CONTAINER-CRAFTSMAN\\DOCKER-VOLUMES-AND-MANAGING-DATA\\logs\\winston\\errors\\.3d13866d3d1c1ca15343818ab794a5fb4fd8627e-audit.json",
+    "files": [
+        {
+            "date": 1772863646537,
+            "name": "D:\\WORK\\renew-level-2\\PH-MODULES\\REWARD\\BE-A-CONTAINER-CRAFTSMAN\\DOCKER-VOLUMES-AND-MANAGING-DATA\\logs\\winston\\errors\\docker-2026-03-07-12-error.log",
+            "hash": "b10942fdf9e7a61fe6c5d7a8dbe0010c85a4f9464eeb03b8f4b9954573c4c9dd"
+        }
+    ],
+    "hashType": "sha256"
+}

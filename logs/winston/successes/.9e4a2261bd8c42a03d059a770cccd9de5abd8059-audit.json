@@ -1,0 +1,70 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\WORK\\renew-level-2\\PH-MODULES\\REWARD\\BE-A-CONTAINER-CRAFTSMAN\\DOCKER-VOLUMES-AND-MANAGING-DATA\\logs\\winston\\successes\\.9e4a2261bd8c42a03d059a770cccd9de5abd8059-audit.json",
+    "files": [
+        {
+            "date": 1772863646534,
+            "name": "D:\\WORK\\renew-level-2\\PH-MODULES\\REWARD\\BE-A-CONTAINER-CRAFTSMAN\\DOCKER-VOLUMES-AND-MANAGING-DATA\\logs\\winston\\successes\\docker-2026-03-07-12-07-26-success.log",
+            "hash": "93b9a81517ce118b6b7f58f1b3db444f715f49f7ef91661767eae2e64e477ab9"
+        },
+        {
+            "date": 1772863694845,
+            "name": "D:\\WORK\\renew-level-2\\PH-MODULES\\REWARD\\BE-A-CONTAINER-CRAFTSMAN\\DOCKER-VOLUMES-AND-MANAGING-DATA\\logs\\winston\\successes\\docker-2026-03-07-12-08-14-success.log",
+            "hash": "64b8df377c6f81622a0dca3d25d64a5cad3200f6f2757b3a9bbe3a83e1b9db01"
+        },
+        {
+            "date": 1772863698841,
+            "name": "D:\\WORK\\renew-level-2\\PH-MODULES\\REWARD\\BE-A-CONTAINER-CRAFTSMAN\\DOCKER-VOLUMES-AND-MANAGING-DATA\\logs\\winston\\successes\\docker-2026-03-07-12-08-18-success.log",
+            "hash": "1bf98ad5950e57e87fae2692d5235ed596a75d906ae0de4936dce25ab7c1f1b6"
+        },
+        {
+            "date": 1772863700039,
+            "name": "D:\\WORK\\renew-level-2\\PH-MODULES\\REWARD\\BE-A-CONTAINER-CRAFTSMAN\\DOCKER-VOLUMES-AND-MANAGING-DATA\\logs\\winston\\successes\\docker-2026-03-07-12-08-20-success.log",
+            "hash": "323c120971f50bb9d7dd15f3f2ad57ff314aacf2204feb0238f482521a19ce51"
+        },
+        {
+            "date": 1772863711599,
+            "name": "D:\\WORK\\renew-level-2\\PH-MODULES\\REWARD\\BE-A-CONTAINER-CRAFTSMAN\\DOCKER-VOLUMES-AND-MANAGING-DATA\\logs\\winston\\successes\\docker-2026-03-07-12-08-31-success.log",
+            "hash": "4cb99ac09b14cbbd458ac7bb77143446b1743bf86d48b21706043725f2aa14ae"
+        },
+        {
+            "date": 1772863714337,
+            "name": "D:\\WORK\\renew-level-2\\PH-MODULES\\REWARD\\BE-A-CONTAINER-CRAFTSMAN\\DOCKER-VOLUMES-AND-MANAGING-DATA\\logs\\winston\\successes\\docker-2026-03-07-12-08-34-success.log",
+            "hash": "3c8fd3891c6c3bb6e706223f7fd80fecc17e2ef8557fa4fdb4ae8c9168d0a151"
+        },
+        {
+            "date": 1772863715758,
+            "name": "D:\\WORK\\renew-level-2\\PH-MODULES\\REWARD\\BE-A-CONTAINER-CRAFTSMAN\\DOCKER-VOLUMES-AND-MANAGING-DATA\\logs\\winston\\successes\\docker-2026-03-07-12-08-35-success.log",
+            "hash": "48a4dd85d9d429b81461e6b5ddd3b4490a6acd090fbbf7b46a039eb8842f23d4"
+        },
+        {
+            "date": 1772863718165,
+            "name": "D:\\WORK\\renew-level-2\\PH-MODULES\\REWARD\\BE-A-CONTAINER-CRAFTSMAN\\DOCKER-VOLUMES-AND-MANAGING-DATA\\logs\\winston\\successes\\docker-2026-03-07-12-08-38-success.log",
+            "hash": "c1269fabf2231d891740c132a259be7b5e3b3211f4bc732dc251d6f8bfde5607"
+        },
+        {
+            "date": 1772863719505,
+            "name": "D:\\WORK\\renew-level-2\\PH-MODULES\\REWARD\\BE-A-CONTAINER-CRAFTSMAN\\DOCKER-VOLUMES-AND-MANAGING-DATA\\logs\\winston\\successes\\docker-2026-03-07-12-08-39-success.log",
+            "hash": "29357f5ee05b1ea4eeac918b3acb45e80312109ef67e1b9401c627b59015085b"
+        },
+        {
+            "date": 1772863753210,
+            "name": "D:\\WORK\\renew-level-2\\PH-MODULES\\REWARD\\BE-A-CONTAINER-CRAFTSMAN\\DOCKER-VOLUMES-AND-MANAGING-DATA\\logs\\winston\\successes\\docker-2026-03-07-12-09-13-success.log",
+            "hash": "3f704da482bb545714e133f2d0d447774e3493a639f4c5ce189318ae9a80d7fd"
+        },
+        {
+            "date": 1772863779326,
+            "name": "D:\\WORK\\renew-level-2\\PH-MODULES\\REWARD\\BE-A-CONTAINER-CRAFTSMAN\\DOCKER-VOLUMES-AND-MANAGING-DATA\\logs\\winston\\successes\\docker-2026-03-07-12-09-39-success.log",
+            "hash": "8a79e363384c2b3b3bf4003fb7a2893e0c40ede1c25bfc254d8d9e3e8d83b85d"
+        },
+        {
+            "date": 1772864003436,
+            "name": "D:\\WORK\\renew-level-2\\PH-MODULES\\REWARD\\BE-A-CONTAINER-CRAFTSMAN\\DOCKER-VOLUMES-AND-MANAGING-DATA\\logs\\winston\\successes\\docker-2026-03-07-12-13-23-success.log",
+            "hash": "29a9a1f4aa5a64f6757e1f23b1c2a4f90fbb779325c85c085f6518ed26d999cf"
+        }
+    ],
+    "hashType": "sha256"
+}
