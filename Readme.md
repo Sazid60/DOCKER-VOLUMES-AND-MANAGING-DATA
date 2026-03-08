@@ -160,3 +160,64 @@ EXPOSE 5000
 
 CMD ["npm", "run", "dev"]
 ```
+
+## 3-5 Named Volumes & Removing Anonymous Volumes
+- The system will be like if any file changes in local machine then the changes will be reflected in the container and if any file changes in the container then the changes will be reflected in the local machine. and we can also use the same volume in multiple containers as well. and we can also backup and restore the volumes. and we can also share the volumes between different containers. and we can also use the volumes in swarm mode as well.
+
+### we need tio know.
+- by default docker handles where it will keep the file in the local machine after the container is deleted. 
+- we can also use `bind mount` (full control) for this purpose but bind mount is not recommended for production because it can cause performance issues. Its like we will connect container with our codebase and we will directly add the code in the container and we will directly see the changes in the container. 
+
+### Volumes are two types 
+- `Anonymous volumes` : These are created automatically by Docker when a container is run with a volume that doesn't have a name.
+- `Named volumes` : These are created explicitly by the user and can be reused across multiple containers.
+
+![alt text](image-2.png)
+
+- here is a twist. if we use named volumes the volume do not get connected with container so even if the container is deleted the volume will not be deleted. but if we use anonymous volumes the volume get connected with container so if the container is deleted the volume will also be deleted. so we need to use named volumes for logs and bind mount for code.
+
+- fo named volumes we need to the docker file like 
+
+```dockerfile
+FROM node:20
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+# VOLUME ["/app/logs"]
+# anonymus volumes
+# we are telling that bro hook the folder name of the container with the host machine
+
+EXPOSE 5000
+
+CMD ["npm", "run", "dev"]
+```
+
+- but we will tell the named volume in docker run command like 
+
+```shell
+docker run -p 5000:5000 --name ts-docker-container --rm -v ts-docker-logs:/app/logs  ts-docker:v2
+```
+
+![alt text](image-3.png)
+
+- here the -v ts-docker-logs:/app/logs is the named volume and ts-docker:v2 is the image name. and we are telling that bro hook the folder name of the container with the host machine(docker will handle it) and we are also telling that if any file changes in local machine then the changes will be reflected in the container and if any file changes in the container then the changes will be reflected in the local machine. and we can also use the same volume in multiple containers as well. and we can also backup and restore the volumes. and we can also share the volumes between different containers. and we can also use the volumes in swarm mode as well.
+
+- in the docker file mentioning volumes will be always anonymous volumes.
+
+#### Boomed !!!!! The Log remains even after deleting the container by using the named volume. 
+
+- if we want we vcn remove the anonymous volume we can use the command 
+
+```shell
+ts-docker-logs
+
+# or 
+
+docker volume prune
+```

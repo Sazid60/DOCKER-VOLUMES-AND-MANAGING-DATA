@@ -8,7 +8,8 @@ RUN npm install
 
 COPY . .
 
-VOLUME ["/app/logs"]
+# VOLUME ["/app/logs"]
+# anonymus volumes
 # we are telling that bro hook the folder name of the container with the host machine
 
 EXPOSE 5000
