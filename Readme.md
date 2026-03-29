@@ -118,10 +118,49 @@ docker build -t ts-docker:v1 .
 
 docker run -p 5000:5000 --rm --name ts-docker-container ts-docker:v1
 ```
+- lets remove the container by stopping the container 
+
+```shell
+docker container stop ts-docker-container
+```
+- lets start the container again 
+
+```shell
+docker run -p 5000:5000 --rm --name ts-docker-container ts-docker:v1
+```
 - this will remove the container and will not be able to see the logs as well because the if we delete the container the logs will be deleted too because the file system is deleted. 
 
 - this is a problem right? we will lose all the logs if we update the code and create a new container. to solve this problem we will use bind mount or named volume. we will use named volume for logs and bind mount for code.
 
+- if we run in attach mode we can see the logs in the terminal but if we run in detached mode we can not see the logs in the terminal. so we need to use named volume for logs and bind mount for code.
+
+```shell
+docker run -p 5000:5000 --name ts-docker-container ts-docker:v1 
+```
+- do not auto remove container while stopping 
+- stop the container 
+
+```shell
+docker container stop ts-docker-container
+```
+-  start the container again in attach mode 
+
+```shell
+docker container start --attach ts-docker-container
+```
+- now the error logs will be there because we are running in attach mode and we can see the logs in the terminal but if we run in detached mode we can not see the logs in the terminal. so we need to use named volume for logs and bind mount for code.
+  
+- in normal mode running it wil run in detach mode 
+
+- lets delete all the container 
+
+```shell
+docker container prune
+```
+- as the container is deleted the logs will not be existing 
+- this is still a  problem. 
+- we will solve this problem by using named volume for logs and bind mount for code.
+ 
 ## 3-4 Introduction To Docker Volumes
 
 - Problems of logs deletion after container deletion is solved by docker `Volumes`.
