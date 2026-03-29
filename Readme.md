@@ -168,7 +168,7 @@ docker container prune
 
 ![alt text](image-1.png)
 
-- volumes are stored in a part of the host filesystem which is managed by docker. and we can use the volume in multiple containers as well. and we can also backup and restore the volumes. and we can also share the volumes between different containers. and we can also use the volumes in swarm mode as well.
+- Volumes are stored in a part of the host filesystem which is managed by docker. and we can use the volume in multiple containers as well. and we can also backup and restore the volumes. and we can also share the volumes between different containers. and we can also use the volumes in swarm mode as well. its like a folder of host machine which is mapped with container. 
 
 ### what we want to do ? the logs file never be deleted even after the container is deleted. the thing is a specific folder we want to store from the container. 
 - here is the twist . 
@@ -184,7 +184,8 @@ COPY . .
 VOLUME ["/app/logs"]
 # we are telling that bro hook the folder name of the container with the host machine(docker will handle it)
 ```
-
+- work of `COPY ..` is connected with image build 
+- work of `VOLUME[]` is connected with container 
 
 ```dockerfile
 FROM node:20
@@ -204,11 +205,19 @@ EXPOSE 5000
 
 CMD ["npm", "run", "dev"]
 ```
+- now do the docker build and run the container 
+
+```shell
+docker build -t ts-docker:v1 .
+
+docker run -p 5000:5000 --rm --name ts-docker-container ts-docker:v1
+```
+- even after adding volume the logs will be removed after deleting the container. lets solve this with named volume
 
 ## 3-5 Named Volumes & Removing Anonymous Volumes
 - The system will be like if any file changes in local machine then the changes will be reflected in the container and if any file changes in the container then the changes will be reflected in the local machine. and we can also use the same volume in multiple containers as well. and we can also backup and restore the volumes. and we can also share the volumes between different containers. and we can also use the volumes in swarm mode as well.
 
-### we need tio know.
+### we need to know.
 - by default docker handles where it will keep the file in the local machine after the container is deleted. 
 - we can also use `bind mount` (full control) for this purpose but bind mount is not recommended for production because it can cause performance issues. Its like we will connect container with our codebase and we will directly add the code in the container and we will directly see the changes in the container. 
 
