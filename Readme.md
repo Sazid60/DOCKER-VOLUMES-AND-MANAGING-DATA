@@ -91,12 +91,17 @@ https://github.com/Apollo-Level2-Web-Dev/docker-with-typescript-backend/tree/mod
 - Data management means managing data in a way that ensures its availability, reliability, and security throughout its lifecycle. It involves processes and practices for collecting, storing, organizing, and maintaining data effectively.
 - Application Environment size (code+environment) is called `Primary Data For Docker`
 - Container has its own internal file system but the image has no file system. thats why image is read only and container is read write.
+- container has its own file system so we can do read write but the image has no file system so we can not do write to it. 
 
 ### Temporary Data
 
 - Temporary data refers to data that is generated or used temporarily during the operation of an application or system. This type of data is often volatile and may be deleted or overwritten once it is no longer needed.
 - In the context of Docker, temporary data can be managed using anonymous volumes or tmpfs mounts, which provide a way to store data that exists only for the duration of the container's lifecycle.
+- a temporary data can be image of a container or a container itself. if we delete the container the data will be deleted as well. but if we want to keep the data even after deleting the container we can use named volumes or bind mounts.
+
+### Permanent data
 - permanent data is stored in named volumes or bind mounts, while temporary data can be stored in anonymous volumes or tmpfs mounts. suppose we want to change code and directly add in container. the image is not gonna get the code. If we delete the container the changes will be deleted right? but we want the file is gonna be there even if we delete the container. so we use bind mount or named volume for that.
+- lets guess a scenario, we want to make some changes and push inside a container and we want the changes to be there even after deleting the container. so we can use bind mount or named volume for that. and if we want to keep the logs even after deleting the container we can use named volume for that. and if we want to keep the code even after deleting the container we can use bind mount for that.
 
 ![alt text](image.png)
 
